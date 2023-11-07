@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.store.StoreVerificationFragment">
+
+    <ImageView
+        android:id="@+id/iv_camera_result"
+        android:layout_width="0dp"
+        android:layout_height="320dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/text_image_preview" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="@string/cd_button_back"
+        android:focusable="true"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_list_store"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,RedundantDescriptionCheck" />
+
+    <TextView
+        android:id="@+id/tv_title_list_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/text_verifikasi_store"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_user_a"
+        app:layout_constraintStart_toStartOf="@id/tv_title_list_store"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_list_store" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_detail_store"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="-24dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_visit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_camera_result">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="24dp" />
+
+            <include
+                android:id="@+id/layout_location_not_suitable"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:visibility="visible"
+                layout="@layout/location_not_suitable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guideline2" />
+
+
+            <ImageView
+                android:id="@+id/iv_store"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_store"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_location_not_suitable"
+                app:tint="@color/orange_foundation"
+                tools:ignore="ImageContrastCheck"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/tv_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/text_toko_b"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/iv_store"
+                app:layout_constraintStart_toEndOf="@id/iv_store"
+                app:layout_constraintTop_toTopOf="@id/iv_store" />
+
+            <TextView
+                android:id="@+id/tv_store_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/text_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_store_name"
+                app:layout_constraintTop_toBottomOf="@id/iv_store" />
+
+            <TextView
+                android:id="@+id/tv_title_tipe_outlet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_tipe_outlet"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@id/tv_store_address"
+                app:layout_constraintTop_toBottomOf="@id/tv_store_address" />
+
+            <TextView
+                android:id="@+id/tv_title_tipe_display"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_title_tipe_display"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@id/tv_store_address"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_tipe_outlet" />
+
+            <TextView
+                android:id="@+id/tv_title_sub_display"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_title_sub_tipe_display"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@id/tv_store_address"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_tipe_display" />
+
+            <TextView
+                android:id="@+id/tv_title_ertm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_ertm"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@id/tv_store_address"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_sub_display" />
+
+            <TextView
+                android:id="@+id/tv_title_pareto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_pareto"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@id/tv_store_address"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_ertm" />
+
+            <TextView
+                android:id="@+id/tv_title_e_marchendise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_e_merchandising"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@id/tv_store_address"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_pareto" />
+
+            <ImageView
+                android:id="@+id/iv_last_visit"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_notes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_e_marchendise"
+                app:tint="@color/orange_foundation"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/tv_title_last_visit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/text_last_visit"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_last_visit"
+                app:layout_constraintStart_toEndOf="@id/iv_last_visit"
+                app:layout_constraintTop_toTopOf="@id/iv_last_visit" />
+
+            <TextView
+                android:id="@+id/tv_last_visit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/text_05_09_2023"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_last_visit"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_title_last_visit"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_last_visit" />
+
+            <TextView
+                android:id="@+id/tv_tipe_outlet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/text_data_null"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_tipe_outlet"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_tipe_outlet"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tv_tipe_display"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/text_data_null"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_tipe_display"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_tipe_display" />
+
+            <TextView
+                android:id="@+id/tv_sub_tipe_display"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/text_data_null"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_sub_display"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_sub_display" />
+
+            <TextView
+                android:id="@+id/tv_ertm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/text_yes"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_ertm"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_ertm" />
+
+            <TextView
+                android:id="@+id/tv_pareto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/text_yes"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_pareto"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_pareto" />
+
+            <TextView
+                android:id="@+id/tv_e_marchendise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/text_yes"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_e_marchendise"
+                app:layout_constraintStart_toStartOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_e_marchendise" />
+
+            <ProgressBar
+                android:id="@+id/pb_load_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:indeterminateTint="@color/blue_foundation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/ib_tag_location"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_button"
+        android:backgroundTint="@color/blue_foundation"
+        android:contentDescription="@string/cd_button_target"
+        android:elevation="5dp"
+        android:src="@drawable/ic_gps"
+        app:layout_constraintBottom_toTopOf="@+id/cv_detail_store"
+        app:layout_constraintEnd_toEndOf="@+id/cv_detail_store"
+        app:layout_constraintTop_toTopOf="@+id/cv_detail_store"
+        app:tint="@color/white"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <ImageButton
+        android:id="@+id/ib_camera"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_button"
+        android:backgroundTint="@color/blue_foundation"
+        android:contentDescription="@string/cd_button_camera"
+        android:elevation="5dp"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintBottom_toTopOf="@+id/cv_detail_store"
+        app:layout_constraintEnd_toStartOf="@id/ib_tag_location"
+        app:layout_constraintTop_toTopOf="@+id/cv_detail_store"
+        app:tint="@color/white"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <ImageButton
+        android:id="@+id/ib_navigation"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_button"
+        android:backgroundTint="@color/blue_foundation"
+        android:contentDescription="@string/cd_button_navigation"
+        android:elevation="5dp"
+        android:src="@drawable/ic_navigation"
+        app:layout_constraintBottom_toTopOf="@+id/cv_detail_store"
+        app:layout_constraintEnd_toStartOf="@id/ib_camera"
+        app:layout_constraintTop_toTopOf="@+id/cv_detail_store"
+        app:tint="@color/white"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_no_visit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/red"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/text_no_visit"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_visit"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_visit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/text_visit"
+        android:backgroundTint="@color/blue_foundation"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_no_visit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_no_visit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

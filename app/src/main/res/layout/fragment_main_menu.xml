@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.mainmenu.MainMenuFragment">
+
+    <View
+        android:id="@+id/v_background"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:background="@color/blue_foundation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/cd_button_refresh"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_main_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_main_menu"
+        app:tint="@color/white"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <TextView
+        android:id="@+id/tv_main_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/text_main_menu"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/avatar"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/v_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_background" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/text_username_mitha"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
+
+    <TextView
+        android:id="@+id/tv_role"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/text_role"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_nik_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/text_nik"
+        android:textAlignment="center"
+        android:textColor="@color/material_grey_600"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_role" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_main_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_nik_number">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_month_visit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_current_visit"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_total_store"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_error"
+                app:tint="@color/red"
+                app:layout_constraintEnd_toStartOf="@id/tv_total_store"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_month_visit"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/tv_total_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/text_150"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintBottom_toBottomOf="@id/iv_total_store"
+                app:layout_constraintEnd_toStartOf="@id/iv_actual_store"
+                app:layout_constraintStart_toEndOf="@id/iv_total_store"
+                app:layout_constraintTop_toTopOf="@id/iv_total_store" />
+
+            <TextView
+                android:id="@+id/tv_title_total_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/text_total_nstore"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_total_store"
+                app:layout_constraintStart_toStartOf="@+id/iv_total_store"
+                app:layout_constraintTop_toBottomOf="@+id/iv_total_store" />
+
+            <ImageView
+                android:id="@+id/iv_actual_store"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_check"
+                app:layout_constraintEnd_toStartOf="@id/tv_actual_store"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_month_visit"
+                app:tint="@color/green_indicator"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/tv_actual_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/text_150"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_actual_store"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_actual_store"
+                app:layout_constraintTop_toTopOf="@+id/iv_actual_store" />
+
+            <TextView
+                android:id="@+id/tv_title_actual_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_actual_nstore"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@id/tv_actual_store"
+                app:layout_constraintStart_toStartOf="@id/iv_actual_store"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_total_store" />
+
+            <ImageView
+                android:id="@+id/iv_percentage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_graph"
+                app:layout_constraintEnd_toStartOf="@id/tv_percentage"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tv_actual_store"
+                app:layout_constraintTop_toBottomOf="@id/tv_month_visit"
+                tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/tv_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/text_50_percent"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/iv_total_store"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_percentage"
+                app:layout_constraintTop_toTopOf="@id/iv_total_store" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_percentage"
+                app:layout_constraintEnd_toEndOf="@+id/tv_percentage"
+                app:layout_constraintStart_toStartOf="@+id/iv_percentage"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_actual_store" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_title_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/text_menu"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_main_info" />
+
+    <ImageButton
+        android:id="@+id/ib_menu_visit"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_button"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_store"
+        app:layout_constraintEnd_toStartOf="@id/ib_menu_target"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_menu"
+        app:tint="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_kunjungan"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/ib_menu_visit"
+        app:layout_constraintStart_toStartOf="@+id/ib_menu_visit"
+        app:layout_constraintTop_toBottomOf="@id/ib_menu_visit" />
+
+    <ImageButton
+        android:id="@+id/ib_menu_target"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_button"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_bullseye_arrow"
+        app:layout_constraintEnd_toStartOf="@id/ib_menu_dashboard"
+        app:layout_constraintStart_toEndOf="@id/ib_menu_visit"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_menu"
+        app:tint="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_title_menu_target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/text_target_install_ncdfdpc"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/ib_menu_target"
+        app:layout_constraintStart_toStartOf="@+id/ib_menu_target"
+        app:layout_constraintTop_toBottomOf="@id/ib_menu_visit" />
+
+    <ImageButton
+        android:id="@+id/ib_menu_dashboard"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_button"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_computer"
+        app:layout_constraintEnd_toStartOf="@id/ib_menu_history"
+        app:layout_constraintStart_toEndOf="@id/ib_menu_target"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_menu"
+        app:tint="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/text_dashboard"
+        app:layout_constraintEnd_toEndOf="@+id/ib_menu_dashboard"
+        app:layout_constraintStart_toStartOf="@+id/ib_menu_dashboard"
+        app:layout_constraintTop_toBottomOf="@id/ib_menu_visit" />
+
+    <ImageButton
+        android:id="@+id/ib_menu_history"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_button"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_notes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ib_menu_dashboard"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_menu"
+        app:tint="@color/black"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/text_transmission_nhistory"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/ib_menu_history"
+        app:layout_constraintStart_toStartOf="@+id/ib_menu_history"
+        app:layout_constraintTop_toBottomOf="@id/ib_menu_visit" />
+
+    <ImageButton
+        android:id="@+id/ib_menu_logout"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_button"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_menu_target"
+        app:tint="@color/black"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_menu_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_logout"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/ib_menu_logout"
+        app:layout_constraintStart_toStartOf="@+id/ib_menu_logout"
+        app:layout_constraintTop_toBottomOf="@id/ib_menu_logout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

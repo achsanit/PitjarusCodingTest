@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "218995282288",
+    "project_id": "code-test-e8168",
+    "storage_bucket": "code-test-e8168.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218995282288:android:9e9a841a3c7ae3822f7fb5",
+        "android_client_info": {
+          "package_name": "com.achsanit.pitjaruscodingtest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9oEXrQfzvz6ejkIHTePzMm7aaDsd6OAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

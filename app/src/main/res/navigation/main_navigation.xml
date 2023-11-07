@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.achsanit.pitjaruscodingtest.ui.fragment.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.achsanit.pitjaruscodingtest.ui.fragment.mainmenu.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_listStoreFragment"
+            app:destination="@id/listStoreFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/mainMenuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listStoreFragment"
+        android:name="com.achsanit.pitjaruscodingtest.ui.fragment.store.ListStoreFragment"
+        android:label="fragment_list_store"
+        tools:layout="@layout/fragment_list_store" >
+        <action
+            android:id="@+id/action_listStoreFragment_to_storeVerificationFragment"
+            app:destination="@id/storeVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.achsanit.pitjaruscodingtest.ui.fragment.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeVerificationFragment"
+        android:name="com.achsanit.pitjaruscodingtest.ui.fragment.store.StoreVerificationFragment"
+        android:label="fragment_store_verification"
+        tools:layout="@layout/fragment_store_verification" >
+        <argument
+            android:name="storeEntityData"
+            app:argType="com.achsanit.pitjaruscodingtest.domain.entity.StoreEntity" />
+        <action
+            android:id="@+id/action_storeVerificationFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_storeVerificationFragment_to_visitFragment"
+            app:destination="@id/visitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.achsanit.pitjaruscodingtest.ui.fragment.store.camera.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/visitFragment"
+        android:name="com.achsanit.pitjaruscodingtest.ui.fragment.visit.VisitFragment"
+        android:label="fragment_visit"
+        tools:layout="@layout/fragment_visit" >
+        <argument
+            android:name="storeData"
+            app:argType="com.achsanit.pitjaruscodingtest.domain.entity.StoreEntity" />
+    </fragment>
+</navigation>
