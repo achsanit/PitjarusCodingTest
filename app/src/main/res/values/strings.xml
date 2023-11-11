@@ -15,7 +15,7 @@
     <string name="cd_button_refresh">Button refresh</string>
     <string name="text_main_menu">Main Menu</string>
     <string name="text_username_mitha">Mitha Khairulnisa</string>
-    <string name="text_role">Role: {...}</string>
+    <string name="text_role">Role: {…}</string>
     <string name="text_nik">NIK. MD00001</string>
     <string name="text_current_visit">Kunjungan pada bulan Agustus 2023</string>
     <string name="text_150">150</string>
@@ -32,7 +32,7 @@
     <string name="cd_history_transmission_button">history transmission button</string>
     <string name="text_user_a">UserA</string>
     <string name="text_list_store">List Store</string>
-    <string name="text_list_kunjungan_19_08_2023">List kunjungan 19-08-2023</string>
+    <string name="text_list_kunjungan_19_08_2023">List kunjungan 19–08–2023</string>
     <string name="text_st0001">ST0001</string>
     <string name="text_indomaret_komsen">Indomaret Komsen</string>
     <string name="text_cluster">Cluster : Small</string>
@@ -59,7 +59,7 @@
     <string name="text_pareto">Pareto</string>
     <string name="text_e_merchandising">E-merchandising</string>
     <string name="text_last_visit">Last Visit</string>
-    <string name="text_05_09_2023">05-09-2023</string>
+    <string name="text_05_09_2023">05–09–2023</string>
     <string name="text_data_null">: (data)</string>
     <string name="text_yes">: Ya</string>
     <string name="text_no_visit">No Visit</string>
@@ -68,4 +68,15 @@
     <string name="cd_button_navigation">button navigation</string>
     <string name="text_verifikasi_store">Verifikasi Store</string>
     <string name="text_image_preview">Image Preview</string>
+    <string name="text_osa">OSA</string>
+    <string name="text_currenet_month">September 2020</string>
+    <string name="text_50">50%</string>
+    <string name="text_target">Target</string>
+    <string name="text_achievement">Pencapaian</string>
+    <string name="text_40">40</string>
+    <string name="text_20">20</string>
+    <string name="text_npd">NPD</string>
+    <string name="text_80">80%</string>
+    <string name="text_100">100</string>
+    <string name="text_80_">80</string>
 </resources>
